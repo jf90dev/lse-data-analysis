@@ -17,9 +17,7 @@ export interface CommonStackProps extends StackProps {}
 
 export class CommonStack extends Stack {
     constructor(scope: Construct, id: string, props: CommonStackProps) {
-        super(scope, id, props)
-
-        
+        super(scope, id, props)        
 
         const emailNotificationTopic = new aws_sns.Topic(this, 'EmailNotificationSNSTopic', {
             topicName: 'EmailNotificationTopic'

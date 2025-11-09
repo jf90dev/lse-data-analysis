@@ -3,6 +3,7 @@ region = eu-west-1
 endpoint_url = http://localhost:4566
 output = json
 services = s3-specific
+aws_account_id=000000000000
 
 [s3-specific]
 s3 =

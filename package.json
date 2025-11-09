@@ -14,6 +14,7 @@
     "start-environment": "cd dev && @powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./start-environment.ps1 && cd ..",
     "stop-environment": "docker-compose -f dev/environment/docker-compose.yml down --volumes && docker network rm price-alerts &&  docker container prune -f",
     "bootstrap-localstack": "cdklocal -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" bootstrap",
+    "setup-localstack": "cdklocal deploy -a \"npx ts-node -r tsconfig-paths/register dev/environment/setup/localstack/main.ts\" --all --require-approval never",
     "deploy-localstack": "cdklocal deploy -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" --all --require-approval never",
     "delete-localstack": "npm run set-local-creds && cdklocal destroy -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" --force --all",
     "update-localstack": "npm run set-local-creds && npm run delete-localstack && npm run deploy-localstack",

@@ -27,6 +27,8 @@ export class LseBestPerformersLambdaStack extends Stack {
         super(scope, id, props)
 
         const emailNotificationTopicArn = Fn.importValue(`EmailNotificationTopicArn`)
+        const placeOrderTopicArn = Fn.importValue(`TradingService-ProportionalBuyOrderRequestTopicArn`)
+
 
         const iamSnsPolicyStatement = new PolicyStatement({
             effect: Effect.ALLOW,
@@ -34,7 +36,8 @@ export class LseBestPerformersLambdaStack extends Stack {
                 "sns:Publish"
             ],
             resources: [
-                emailNotificationTopicArn
+                emailNotificationTopicArn,
+                placeOrderTopicArn
             ]
         });       
         
@@ -43,7 +46,8 @@ export class LseBestPerformersLambdaStack extends Stack {
             NODE_OPTIONS: '--enable-source-maps',
             LOG_LEVEL: 'info',
             MONGODB_CONNECTION_STRING: props.mongoDbConnectionString,
-            SNS_TOPIC_ARN: emailNotificationTopicArn
+            SNS_TOPIC_ARN: emailNotificationTopicArn,
+            PLACE_ORDER_SNS_TOPIC_ARN: placeOrderTopicArn
         }
 
         const lseBestPerformersLambdaFunction =

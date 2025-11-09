@@ -9,15 +9,17 @@ Start-Sleep -Seconds 5
 echo 'Execute mongo setup...'
 docker exec -it mongodb mongosh --eval "load('/db/init.js')"
 echo 'Sleep for 5...'
-Start-Sleep -Seconds 30
+Start-Sleep -Seconds 5
 
 cd ..
+
+npm run remove-cdkout
 
 # set AWS credentials for localstack
 $env:AWS_CONFIG_FILE ="$(Get-Location)\dev\environment\config"
 $env:AWS_SHARED_CREDENTIALS_FILE ="$(Get-Location)\dev\environment\credentials"
 
-npm run remove-cdkout
+
 npm run bootstrap-localstack
 
 $bootstrapRoles = @(
@@ -32,5 +34,6 @@ ForEach ($role in $bootstrapRoles) {
     aws iam attach-role-policy --role-name $role --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --region eu-west-1 --endpoint-url http://localhost:4566
 }
 
+npm run setup-localstack
 npm run deploy-localstack
 cd dev 
