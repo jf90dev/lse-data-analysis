@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AwsAccount = void 0;
+exports.AwsAccount = {
+    localstack: '000000000000',
+    jf: '290275941221',
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXdzLWFjY291bnQuY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vbGliL2NvbnN0YW50cy9hd3MtYWNjb3VudC5jb25zdGFudHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQWEsUUFBQSxVQUFVLEdBQUc7SUFDdEIsVUFBVSxFQUFFLGNBQWM7SUFDMUIsRUFBRSxFQUFFLGNBQWM7Q0FDckIsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBd3NBY2NvdW50ID0ge1xyXG4gICAgbG9jYWxzdGFjazogJzAwMDAwMDAwMDAwMCcsXHJcbiAgICBqZjogJzI5MDI3NTk0MTIyMScsXHJcbn0iXX0=

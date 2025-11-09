@@ -1,0 +1,9 @@
+[default]
+region = eu-west-1
+endpoint_url = http://localhost:4566
+output = json
+services = s3-specific
+
+[s3-specific]
+s3 =
+	endpoint_url = http://127.0.0.1:4566

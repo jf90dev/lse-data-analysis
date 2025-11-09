@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MongoDbError = void 0;
+const error_base_model_1 = require("./error-base.model");
+class MongoDbError extends error_base_model_1.ErrorBase {
+    constructor({ message, cause }) {
+        super({ name: 'MONGODB_ERROR', message, cause });
+    }
+}
+exports.MongoDbError = MongoDbError;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9uZ29kYi1lcnJvci5tb2RlbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3NvZnR3YXJlL3NoYXJlZC9zcmMvbW9kZWxzL2Vycm9yLWhhbmRsaW5nL21vbmdvZGItZXJyb3IubW9kZWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEseURBQStDO0FBSS9DLE1BQWEsWUFBYSxTQUFRLDRCQUFvQjtJQUNsRCxZQUFZLEVBQUMsT0FBTyxFQUFFLEtBQUssRUFBa0M7UUFDekQsS0FBSyxDQUFDLEVBQUUsSUFBSSxFQUFFLGVBQWUsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztJQUNyRCxDQUFDO0NBQ0o7QUFKRCxvQ0FJQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEVycm9yQmFzZSB9IGZyb20gXCIuL2Vycm9yLWJhc2UubW9kZWxcIjtcclxuXHJcbnR5cGUgRXJyb3JOYW1lID0gJ01PTkdPREJfRVJST1InO1xyXG5cclxuZXhwb3J0IGNsYXNzIE1vbmdvRGJFcnJvciBleHRlbmRzIEVycm9yQmFzZTxFcnJvck5hbWU+IHtcclxuICAgIGNvbnN0cnVjdG9yKHttZXNzYWdlLCBjYXVzZSB9OiB7bWVzc2FnZTogc3RyaW5nLCBjYXVzZT86IGFueX0pIHtcclxuICAgICAgICBzdXBlcih7IG5hbWU6ICdNT05HT0RCX0VSUk9SJywgbWVzc2FnZSwgY2F1c2UgfSk7XHJcbiAgICB9XHJcbn1cclxuIl19

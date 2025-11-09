@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ErrorBase = void 0;
+class ErrorBase extends Error {
+    constructor({ name, message, cause }) {
+        super();
+        this.name = name;
+        this.message = message;
+        this.cause = cause;
+    }
+}
+exports.ErrorBase = ErrorBase;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXJyb3ItYmFzZS5tb2RlbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3NvZnR3YXJlL3NoYXJlZC9zcmMvbW9kZWxzL2Vycm9yLWhhbmRsaW5nL2Vycm9yLWJhc2UubW9kZWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsTUFBYSxTQUE0QixTQUFRLEtBQUs7SUFLbEQsWUFBWSxFQUFDLElBQUksRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUEwQztRQUN2RSxLQUFLLEVBQUUsQ0FBQztRQUNSLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDO1FBQ2pCLElBQUksQ0FBQyxPQUFPLEdBQUcsT0FBTyxDQUFDO1FBQ3ZCLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO0lBQ3ZCLENBQUM7Q0FDSjtBQVhELDhCQVdDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIEVycm9yQmFzZTxUIGV4dGVuZHMgc3RyaW5nPiBleHRlbmRzIEVycm9yIHtcclxuICAgIG5hbWU6IFQ7XHJcbiAgICBtZXNzYWdlOiBzdHJpbmc7XHJcbiAgICBjYXVzZT86IGFueTtcclxuXHJcbiAgICBjb25zdHJ1Y3Rvcih7bmFtZSwgbWVzc2FnZSwgY2F1c2V9OiB7bmFtZTogVCwgbWVzc2FnZTogc3RyaW5nLCBjYXVzZT86IGFueX0pIHtcclxuICAgICAgICBzdXBlcigpO1xyXG4gICAgICAgIHRoaXMubmFtZSA9IG5hbWU7XHJcbiAgICAgICAgdGhpcy5tZXNzYWdlID0gbWVzc2FnZTtcclxuICAgICAgICB0aGlzLmNhdXNlID0gY2F1c2U7XHJcbiAgICB9XHJcbn0iXX0=

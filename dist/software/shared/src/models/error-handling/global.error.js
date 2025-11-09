@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GlobalError = void 0;
+const error_base_model_1 = require("./error-base.model");
+class GlobalError extends error_base_model_1.ErrorBase {
+    constructor({ message, cause }) {
+        super({ name: 'GLOBAL_ERROR', message, cause });
+    }
+}
+exports.GlobalError = GlobalError;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2xvYmFsLmVycm9yLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc29mdHdhcmUvc2hhcmVkL3NyYy9tb2RlbHMvZXJyb3ItaGFuZGxpbmcvZ2xvYmFsLmVycm9yLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLHlEQUErQztBQUkvQyxNQUFhLFdBQVksU0FBUSw0QkFBb0I7SUFDakQsWUFBWSxFQUFDLE9BQU8sRUFBRSxLQUFLLEVBQWtDO1FBQ3pELEtBQUssQ0FBQyxFQUFDLElBQUksRUFBRSxjQUFjLEVBQUUsT0FBTyxFQUFFLEtBQUssRUFBQyxDQUFDLENBQUM7SUFDbEQsQ0FBQztDQUNKO0FBSkQsa0NBSUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBFcnJvckJhc2UgfSBmcm9tICcuL2Vycm9yLWJhc2UubW9kZWwnO1xyXG5cclxudHlwZSBFcnJvck5hbWUgPSAnR0xPQkFMX0VSUk9SJztcclxuXHJcbmV4cG9ydCBjbGFzcyBHbG9iYWxFcnJvciBleHRlbmRzIEVycm9yQmFzZTxFcnJvck5hbWU+IHtcclxuICAgIGNvbnN0cnVjdG9yKHttZXNzYWdlLCBjYXVzZX0gOiB7bWVzc2FnZTogc3RyaW5nLCBjYXVzZT86IGFueX0pIHtcclxuICAgICAgICBzdXBlcih7bmFtZTogJ0dMT0JBTF9FUlJPUicsIG1lc3NhZ2UsIGNhdXNlfSk7XHJcbiAgICB9XHJcbn0iXX0=

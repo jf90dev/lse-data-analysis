@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Database = void 0;
+exports.Database = {
+    collections: {
+        ftse100PriceAnalysis: 'ftse100_price_analysis'
+    }
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF0YWJhc2UuY29uc3RhbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9zb2Z0d2FyZS9sYW1iZGEvbHNlLWJlc3QtcGVyZm9ybWVycy9zcmMvY29uc3RhbnRzL2RhdGFiYXNlLmNvbnN0YW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsUUFBUSxHQUFHO0lBQ3BCLFdBQVcsRUFBRTtRQUNULG9CQUFvQixFQUFFLHdCQUF3QjtLQUNqRDtDQUNLLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgRGF0YWJhc2UgPSB7XHJcbiAgICBjb2xsZWN0aW9uczoge1xyXG4gICAgICAgIGZ0c2UxMDBQcmljZUFuYWx5c2lzOiAnZnRzZTEwMF9wcmljZV9hbmFseXNpcydcclxuICAgIH1cclxufSBhcyBjb25zdDtcclxuIl19

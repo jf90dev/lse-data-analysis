@@ -1,0 +1,56 @@
+{
+  "name": "lse-data-analysis",
+  "version": "0.1.0",
+  "bin": {
+    "price-alerts": "bin/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "remove-cdkout": "del /q cdk.out",
+    "set-local-creds": "set AWS_CONFIG_FILE=dev/environment/setup/config && set AWS_SHARED_CREDENTIALS_FILE=dev/environment/setup/credentials",
+    "start-environment": "cd dev && @powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./start-environment.ps1 && cd ..",
+    "stop-environment": "docker-compose -f dev/environment/docker-compose.yml down --volumes && docker network rm price-alerts &&  docker container prune -f",
+    "bootstrap-localstack": "cdklocal -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" bootstrap",
+    "deploy-localstack": "cdklocal deploy -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" --all --require-approval never",
+    "delete-localstack": "npm run set-local-creds && cdklocal destroy -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" --force --all",
+    "update-localstack": "npm run set-local-creds && npm run delete-localstack && npm run deploy-localstack",
+
+    "deploy-best-performers": "cdklocal deploy LseBestPerformersLambdaStack -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" --require-approval never --method=direct",
+    "delete-best-performers": "cdklocal -a \"npx ts-node -r tsconfig-paths/register dev/main.ts\" destroy LseBestPerformersLambdaStack --force",
+    "update-best-performers": "npm run set-local-creds && npm run delete-best-performers && npm run deploy-best-performers"
+
+
+
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.772.0",
+    "@aws-sdk/client-lambda": "^3.772.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.7.9",
+    "aws-cdk": "2.1016.0",
+    "aws-cdk-lib": "2.195.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.25.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.775.0",
+    "@aws-sdk/client-sqs": "^3.777.0",
+    "@types/aws-lambda": "^8.10.148",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "googleapis": "^148.0.0",
+    "mongodb": "^6.18.0",
+    "reflect-metadata": "^0.2.2",
+    "source-map-support": "^0.5.21",
+    "tsyringe": "^4.8.0",
+    "winston": "^3.17.0"
+  }
+}

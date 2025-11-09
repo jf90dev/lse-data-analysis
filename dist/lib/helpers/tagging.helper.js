@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TaggingHelpers = void 0;
+const aws_cdk_lib_1 = require("aws-cdk-lib");
+const aws_tags_constant_1 = require("@lib/constants/aws-tags.constant");
+class TaggingHelpers {
+    static tagResource(resource) {
+        for (const x in aws_tags_constant_1.AwsTags) {
+            aws_cdk_lib_1.Tags.of(resource).add(x, aws_tags_constant_1.AwsTags[x]);
+        }
+    }
+}
+exports.TaggingHelpers = TaggingHelpers;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFnZ2luZy5oZWxwZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9saWIvaGVscGVycy90YWdnaW5nLmhlbHBlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSw2Q0FBa0M7QUFFbEMsd0VBQTJEO0FBRTNELE1BQWEsY0FBYztJQUN2QixNQUFNLENBQUMsV0FBVyxDQUFDLFFBQW1CO1FBRWxDLEtBQUssTUFBTSxDQUFDLElBQUksMkJBQU8sRUFBRSxDQUFDO1lBQ3RCLGtCQUFJLENBQUMsRUFBRSxDQUFDLFFBQVEsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLEVBQUUsMkJBQU8sQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBQ3pDLENBQUM7SUFDTCxDQUFDO0NBQ0o7QUFQRCx3Q0FPQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29uc3RydWN0fSBmcm9tIFwiY29uc3RydWN0c1wiO1xyXG5pbXBvcnQgeyBUYWdzfSBmcm9tIFwiYXdzLWNkay1saWJcIjtcclxuXHJcbmltcG9ydCB7IEF3c1RhZ3MgfSBmcm9tIFwiQGxpYi9jb25zdGFudHMvYXdzLXRhZ3MuY29uc3RhbnRcIjtcclxuXHJcbmV4cG9ydCBjbGFzcyBUYWdnaW5nSGVscGVycyB7XHJcbiAgICBzdGF0aWMgdGFnUmVzb3VyY2UocmVzb3VyY2U6IENvbnN0cnVjdCkge1xyXG5cclxuICAgICAgICBmb3IgKGNvbnN0IHggaW4gQXdzVGFncykge1xyXG4gICAgICAgICAgICBUYWdzLm9mKHJlc291cmNlKS5hZGQoeCwgQXdzVGFnc1t4XSk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59Il19

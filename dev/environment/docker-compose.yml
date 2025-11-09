@@ -1,0 +1,44 @@
+version: '3.6'
+
+services:
+  localstack:
+      container_name: localstack
+      image: localstack/localstack-pro:latest
+      environment:
+        DEBUG: 1
+        LOCALSTACK_AUTH_TOKEN: ls-raKerOle-8840-wIJA-3639-viXALUmOad40
+        AWS_DEFAULT_REGION: eu-west-1                   
+        LAMBDA_IGNORE_ARCHITECTURE: 1
+        EXTENSION_AUTO_INSTALL: localstack-extension-event-studio
+        # LAMBDA_DOCKER_FLAGS: -e NODE_OPTIONS=--inspect-brk=0.0.0.0:9229 -p 9229:9229
+        # ECS_DOCKER_FLAGS: -e NODE_OPTIONS=--inspect-brk=0.0.0.0:9229 -p 9229:9229
+        ENFORCE_IAM: 1
+        SERVICES: ses,apigateway,sqs,lambda,s3,cloudwatch,logs,cloudformation,ssm,iam,ecr,ec2,events,dynamodb,ecs,sns,scheduler
+      volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+      ports:
+          - 4566:4566
+          # - 9229:9229
+
+  mongodb:
+    image: mongo:8.0.11
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./setup/mongodb:/db
+    restart: always
+
+  mockoon:
+    image: mockoon/cli:latest
+    container_name: mockoon
+    ports:
+      - 3001:3001
+    volumes: 
+      - ./setup/mockoon:/data
+    command: -d data/eodhd-api.json            
+
+networks:
+  default: # https://docs.docker.com/compose/networking/#use-a-pre-existing-network
+      name: lse-data-analysis
+      external: true
